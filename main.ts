@@ -1,5 +1,5 @@
 /**
- * makecode APDS9930 Digital Proximity and Ambient Light Sensor package.
+ * makecode APDS9960 Digital Proximity and Ambient Light Sensor package.
  * From microbit/micropython Chinese community.
  * http://www.micropython.org.cn
  */
@@ -45,7 +45,7 @@ const C = 746
 const D = 1291
 
 /**
- * APDS9930 mudule
+ * APDS9960 mudule
  */
 //% weight=100 color=#102010 icon="\uf0eb" block="APDS9930"
 namespace APDS9930 {
@@ -102,7 +102,7 @@ namespace APDS9930 {
     /**
      * set ALS GAIN
      */
-    //% blockId="APDS9930_SET_AGAIN" block="set ALS GAIN %gain"
+    //% blockId="APDS9960_SET_AGAIN" block="set ALS GAIN %gain"
     //% weight=100 blockGap=8
     export function AGAIN(gain: APDS9930_AGAIN) {
         let t = getReg(APDS9930_CONTROL)
@@ -126,7 +126,7 @@ namespace APDS9930 {
      * set Proximity GAIN
      * @param gain is Proximity GAIN, eg: APDS9930_PGAIN.PGAIN_8
      */
-    //% blockId="APDS9930_SET_PGAIN" block="set Proximity GAIN %gain"
+    //% blockId="APDS9960_SET_PGAIN" block="set Proximity GAIN %gain"
     //% weight=100 blockGap=8
     export function PGAIN(gain: APDS9930_PGAIN) {
         let t = getReg(APDS9930_CONTROL)
@@ -149,7 +149,7 @@ namespace APDS9930 {
     /**
      * Power On
      */
-    //% blockId="APDS9930_ON" block="Power On"
+    //% blockId="APDS9960_ON" block="Power On"
     //% weight=81 blockGap=8
     export function PowerOn() {
         let t = getReg(APDS9930_ENABLE)
@@ -161,7 +161,7 @@ namespace APDS9930 {
     /**
      * Power Off
      */
-    //% blockId="APDS9930_OFF" block="Power Off"
+    //% blockId="APDS9960_OFF" block="Power Off"
     //% weight=80 blockGap=8
     export function PowerOff() {
         let t = getReg(APDS9930_ENABLE)
@@ -173,7 +173,7 @@ namespace APDS9930 {
      * ALS Enable
      * @param en is enable/disable ALS, eg: true
      */
-    //% blockId="APDS9930_ALS_ENABLE" block="ALS Enable %en"
+    //% blockId="APDS9960_ALS_ENABLE" block="ALS Enable %en"
     //% weight=120 blockGap=8
     export function ALSEnable(en: boolean = true) {
         let t = getReg(APDS9930_ENABLE)
@@ -186,7 +186,7 @@ namespace APDS9930 {
      * Proximity Enable
      * @param en is enable/disable Proximity, eg: true
      */
-    //% blockId="APDS9930_Proximity_ENABLE" block="Proximity Enable %en"
+    //% blockId="APDS9960_Proximity_ENABLE" block="Proximity Enable %en"
     //% weight=120 blockGap=8
     export function ProximityEnable(en: boolean = true) {
         let t = getReg(APDS9930_ENABLE)
@@ -209,7 +209,7 @@ namespace APDS9930 {
     /**
      * get ALS
      */
-    //% blockId="APDS9930_GET_ALS" block="get ALS"
+    //% blockId="APDS9960_GET_ALS" block="get ALS"
     //% weight=201 blockGap=8
     export function getALS(): number {
         let Ch0 = getCH0()
@@ -224,7 +224,7 @@ namespace APDS9930 {
     /**
      * get Proximity
      */
-    //% blockId="APDS9930_GET_Proximity" block="get Proximity"
+    //% blockId="APDS9960_GET_Proximity" block="get Proximity"
     //% weight=200 blockGap=8
     export function getProximity(): number {
         return Math.idiv(get2Reg(APDS9930_PDATAL), _PGAIN)
@@ -233,7 +233,7 @@ namespace APDS9930 {
     /**
      * Initialize
      */
-    //% blockId="APDS9930_INIT" block="APDS9930 Initialize"
+    //% blockId="APDS9960_INIT" block="APDS9930 Initialize"
     //% weight=210 blockGap=8
     export function init() {
         ATIME(256 - 8)
