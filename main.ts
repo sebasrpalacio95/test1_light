@@ -48,7 +48,7 @@ const D = 1291
  * APDS9960 mudule
  */
 //% weight=100 color=#102010 icon="\uf0eb" block="APDS9930"
-namespace APDS9930 {
+namespace APDS9960 {
     let _wbuf = pins.createBuffer(2);
     let _AGAIN = 1;
     let _PGAIN = 3;
